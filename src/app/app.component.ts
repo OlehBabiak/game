@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'game';
+oddElements: number[] = [];
+evenElements: number[] = [];
+
+  onValueCreate(value: number) {
+    console.log(this.evenElements)
+    value % 2 === 0 ? this.evenElements.push(value) : this.oddElements.push(value)
+  }
+
+  onValueReset() {
+    this.oddElements = [];
+    this.evenElements = []
+  }
 }
